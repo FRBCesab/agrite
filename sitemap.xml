@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>/authors.html</loc>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/check_doi.html</loc>
+  </url>
+  <url>
+    <loc>/reference/clean_title.html</loc>
+  </url>
+  <url>
+    <loc>/reference/doi_to_bib.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/search_in_wos.html</loc>
+  </url>
+  <url>
+    <loc>/reference/title_from_citation.html</loc>
+  </url>
+</urlset>
