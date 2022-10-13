@@ -1,0 +1,12 @@
+^LICENSE\.md$
+^.*\.Rproj$
+^\.Rproj\.user$
+^make\.R$
+^analyses$
+^data$
+^outputs$
+^countryparser\.R$
+^README\.Rmd$
+^README\.html$
+^.github$
+^_pkgdown\.yaml$
