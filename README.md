@@ -13,13 +13,16 @@ Check](https://github.com/frbcesab/agrite/actions/workflows/R-CMD-check.yaml/bad
 [![Dependencies](https://img.shields.io/badge/dependencies-10/67-red?style=flat)](#)
 <!-- badges: end -->
 
-Research Compendium of the project **{{ PLEASE ADD A FEW WORDS }}**
+Research Compendium of the
+[FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)
+research group
+[Agri-TE](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/agri-te/).
 
 ### How to cite
 
 Please cite this compendium as:
 
-> **{{ PLEASE ADD A CITATION }}**
+> Coming soon…
 
 ### Content
 
