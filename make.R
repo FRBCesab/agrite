@@ -23,9 +23,10 @@ remotes::install_deps(upgrade = "never")
 pkgload::load_all(here::here())
 
 
-## Global Variables ----
+## Create sub-folders ----
 
-# You can list global variables here (or in a separate R script)
+dir.create(here::here("data", "derived-data"), showWarnings = FALSE)
+dir.create(here::here("outputs"), showWarnings = FALSE)
 
 
 ## Run Project ----
