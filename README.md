@@ -10,7 +10,7 @@ Check](https://github.com/frbcesab/agrite/actions/workflows/R-CMD-check.yaml/bad
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 [![Website](https://github.com/frbcesab/agrite/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/agrite/actions/workflows/pkgdown.yaml)
-[![Dependencies](https://img.shields.io/badge/dependencies-10/67-red?style=flat)](#)
+[![Dependencies](https://img.shields.io/badge/dependencies-9/66-orange?style=flat)](#)
 <!-- badges: end -->
 
 Research Compendium of the
@@ -18,11 +18,13 @@ Research Compendium of the
 research group
 [Agri-TE](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/agri-te/).
 
-### How to cite
-
-Please cite this compendium as:
-
-> Coming soon…
+This repository contains different functions to retrieve the DOI of a
+reference citation using the [Web of Science Lite
+API](https://developer.clarivate.com/apis/woslite) (and the R package
+[`rwoslite`](https://github.com/frbcesab/rwoslite)) and the [CrossRef
+API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/)
+(and the R package
+[`rcrossref`](https://cran.r-project.org/package=rcrossref)).
 
 ### Content
 
@@ -52,11 +54,15 @@ This repository is structured as follow:
 
 ### Usage
 
-Clone the repository, open R/RStudio and run:
+Clone the repository, open RStudio, create a new project inside this
+folder and open the `make.R`.
 
-``` r
-source("make.R")
-```
+### How to cite
+
+Please cite this compendium as:
+
+> Casajus N. & Bellouin D. (2022) agrite: A toolbox to retrieve DOI of a
+> reference citation.
 
 ### Notes
 

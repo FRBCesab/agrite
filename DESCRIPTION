@@ -1,15 +1,24 @@
 Package: agrite
 Type: Package
-Title: Toolbox for the Agri-TE Project
-Version: 0.0.0.9000
+Title: Toolbox to Retrieve DOI from a Citation
+Version: 0.0.1
 Authors@R: c(
     person(given   = "Nicolas",
            family  = "Casajus",
            role    = c("aut", "cre", "cph"),
            email   = "nicolas.casajus@fondationbiodiversite.fr",
-           comment = c(ORCID = "0000-0002-5537-5294")))
-Description: A paragraph providing a full description of the project (on 
-    several lines...)
+           comment = c(ORCID = "0000-0002-5537-5294")),
+    person(given   = "Damien",
+           family  = "Bellouin",
+           role    = "aut",
+           email   = "damien.beillouin@cirad.fr",
+           comment = c(ORCID = "0000-0003-2014-3482")))
+Description: Research Compendium of the 
+    FRB-CESAB (<https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/>)
+    research group Agri-TE (<https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/agri-te/>).
+    Contains different functions to retrieve the DOI of a reference citation using the 
+    Web of Science Lite API (<https://developer.clarivate.com/apis/woslite>) and the 
+    CrossRef API (<https://www.crossref.org/documentation/retrieve-metadata/rest-api/>).
 URL: https://github.com/FRBCesab/agrite
 BugReports: https://github.com/FRBCesab/agrite/issues
 License: GPL (>= 2)
@@ -19,7 +28,6 @@ RoxygenNote: 7.2.1
 Imports: 
     curl,
     here,
-    pdftools,
     pkgload,
     rcrossref,
     readxl,
