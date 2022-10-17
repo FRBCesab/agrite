@@ -1,0 +1,13 @@
+reference:
+- title: Handle citation
+  contents:
+    - title_from_citation
+    - clean_title
+- title: Retrieve reference
+  contents:
+    - search_doi
+    - search_in_wos
+    - search_in_cr
+- title: Handle DOI
+    - check_doi
+    - doi_to_bib
