@@ -9,5 +9,6 @@ reference:
     - search_in_wos
     - search_in_cr
 - title: Handle DOI
+  contents:
     - check_doi
     - doi_to_bib
