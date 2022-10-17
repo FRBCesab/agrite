@@ -5,7 +5,7 @@
 #' `10.----/suffix`. Also checks if the redirection using the **DOI System**
 #' (\url{https://www.doi.org/}) works. An internet connection is required.
 #' 
-#' @param doi a `character` of length 1.
+#' @param doi a `character` of length 1. A single DOI to check.
 #'
 #' @return A `logical`. If the DOI has the good structure and exists on 
 #' <https://www.doi.org/>, the returned value will be `TRUE`.

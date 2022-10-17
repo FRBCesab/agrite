@@ -3,5 +3,7 @@
 export(check_doi)
 export(clean_title)
 export(doi_to_bib)
+export(search_doi)
+export(search_in_cr)
 export(search_in_wos)
 export(title_from_citation)

@@ -2,12 +2,12 @@
 % Please edit documentation in R/title-from-citation.R
 \name{title_from_citation}
 \alias{title_from_citation}
-\title{Extract the title from a reference citation}
+\title{Extract the title from a citation}
 \usage{
 title_from_citation(x)
 }
 \arguments{
-\item{x}{a \code{character} of length 1. A reference citation written as
+\item{x}{a \code{character} of length 1. A citation written as
 "Authors Year Title. Journal..."}
 }
 \value{
@@ -23,9 +23,10 @@ The title must end with a dot. If the title contains internal dots, only
 the part of the title left to the first dot will be returned.
 }
 \examples{
-ref <- paste("R Core Team (2022) R: A language and environment for ", 
-             "statistical computing. R Foundation for Statistical ",
-             "Computing, Vienna, Austria. URL https://www.R-project.org/.")
+ref <- paste0("Quainoo, A.K., Wetten, A.C., Allainguillaume, J., 2008. The ",
+              "effectiveness of somatic embryogenesis in eliminating the ", 
+              "cocoa swollen shoot virus from infected co- coa trees. ", 
+              "J. Virol. Methods 149, 91e96.")
 ref
 
 title_from_citation(ref)

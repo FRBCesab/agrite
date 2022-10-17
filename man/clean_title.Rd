@@ -2,13 +2,13 @@
 % Please edit documentation in R/clean-title.R
 \name{clean_title}
 \alias{clean_title}
-\title{Clean a title extracted from a reference citation}
+\title{Clean a title extracted from a citation}
 \usage{
 clean_title(x)
 }
 \arguments{
-\item{x}{a \code{character} of length 1. A title extracted from a reference
-citation to clean.}
+\item{x}{a \code{character} of length 1. A title extracted from a citation to
+clean.}
 }
 \value{
 A \code{character} of length 1 with the extracted title. If the title
@@ -19,11 +19,14 @@ Cleans a string by removing numbers, caesuras, punctuation, multiple
 whitespace, leading, and trailing whitespace.
 }
 \examples{
-ref <- paste("R Core Team (2022) R: A language and environment for ", 
-             "statistical computing. R Foundation for Statistical ",
-             "Computing, Vienna, Austria. URL https://www.R-project.org/.")
+ref <- paste0("Quainoo, A.K., Wetten, A.C., Allainguillaume, J., 2008. The ",
+              "effectiveness of somatic embryogenesis in eliminating the ", 
+              "cocoa swollen shoot virus from infected co- coa trees. ", 
+              "J. Virol. Methods 149, 91e96.")
 ref
 
 ref_title <- title_from_citation(ref)
+ref_title
+
 clean_title(ref_title)
 }

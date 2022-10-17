@@ -2,13 +2,13 @@
 % Please edit documentation in R/search-in-wos.R
 \name{search_in_wos}
 \alias{search_in_wos}
-\title{Find the DOI of a citation reference using the Web of Science Lite API}
+\title{Find the DOI of a citation using the Web of Science Lite API}
 \usage{
-search_in_wos(x, limit = 10)
+search_in_wos(x, limit = 1)
 }
 \arguments{
-\item{x}{a \code{character} of length 1. A reference citation written as
-"Authors Year Title. Journal...". See \link{title_from_citation} for further
+\item{x}{a \code{character} of length 1. A citation written as
+"Authors Year Title. Journal...". See \code{\link{title_from_citation}} for further
 detail.}
 
 \item{limit}{an \code{integer} of length 1. The maximum number of records to test
@@ -17,18 +17,18 @@ to identify the match. Must be strictly positive and < 100,0000.}
 \value{
 A \code{data.frame} with one row and the following 4 columns:
 \itemize{
-\item \code{search_term}: the cleaned title extracted from the citation reference
-used as the query terms in WOS API;
+\item \code{search_term}: the cleaned title extracted from the citation used as the
+query terms in WOS API;
 \item \code{wos_best_title}: the title of the best reference returned by WOS;
 \item \code{wos_best_doi}: the DOI corresponding to the best reference returned by
 WOS;
 \item \code{wos_string_dist}: the string distance (Optimal string aligment, \code{osa})
 between the original title and the one returned by WOS.
-See \link[stringdist:stringdist]{stringdist::stringdist} for further information.
+See \code{\link[stringdist:stringdist]{stringdist::stringdist}} for further information.
 }
 }
 \description{
-From a citation reference, extracts the title and searches the corresponding
+From a citation, extracts the title and searches the corresponding
 DOI on the Web of Science database using the WOS Lite API
 (\url{https://developer.clarivate.com/apis/woslite}) and the R package
 \code{rwoslite} (\url{https://github.com/frbcesab/rwoslite}).
@@ -37,13 +37,20 @@ DOI on the Web of Science database using the WOS Lite API
 \url{https://github.com/frbcesab/rwoslite} for further information.
 
 The extraction of the title is performed by the function
-\link{title_from_citation} and may fail if the citation reference is malformed.
+\code{\link{title_from_citation}} and may fail if the citation is malformed.
 
 If the argument \code{limit} is higher than 1, candidate titles (i.e. titles of
 the references returned by the WOS Lite API) are compared to the original
 title, and the DOI of the one that has the best match is returned. This
-string distance is performed using the function \link[stringdist:stringdist]{stringdist::stringdist}.
+string distance is performed using the function \code{\link[stringdist:stringdist]{stringdist::stringdist}}.
 }
 \examples{
-## Add an example
+\dontrun{
+ref <- paste0("Quainoo, A.K., Wetten, A.C., Allainguillaume, J., 2008. The ",
+              "effectiveness of somatic embryogenesis in eliminating the ", 
+              "cocoa swollen shoot virus from infected co- coa trees. ", 
+              "J. Virol. Methods 149, 91e96.")
+              
+search_in_wos(ref)
+}
 }

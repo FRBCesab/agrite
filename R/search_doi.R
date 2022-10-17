@@ -1,4 +1,60 @@
-search_doi <- function(x, limit = 10) {
+#' Find the DOI of a citation using the Web of Science Lite and CrossRef APIs
+#'
+#' @description
+#' This function is a wrapper around [`search_in_wos`] and [`search_in_cr`].
+#' 
+#' From a citation, extracts the title and searches the corresponding 
+#' DOI on the Web of Science database using the WOS Lite API 
+#' (\url{https://developer.clarivate.com/apis/woslite}) and the R package
+#' `rwoslite` (\url{https://github.com/frbcesab/rwoslite}). If the WOS Lite API
+#' does not return any match, then the search is performed using the CrossRef 
+#' API 
+#' (\url{https://www.crossref.org/documentation/retrieve-metadata/rest-api/}) 
+#' and the R package `rcrossref`
+#' (\url{https://cran.r-project.org/package=rcrossref}).
+#' 
+#' **Important**: for the WOS Lite API, a token must be first obtained and 
+#' stored locally. See \url{https://github.com/frbcesab/rwoslite} for further 
+#' information. For the CrossRef API, you need to share your email address with
+#' the API. See
+#' \url{https://docs.ropensci.org/rcrossref/#register-for-the-polite-pool} 
+#' for further information.
+#' 
+#' The extraction of the title is performed by the function 
+#' [`title_from_citation`] and may fail if the citation is malformed.
+#' 
+#' @param x a `character` of length 1. A citation written as
+#'   "Authors Year Title. Journal...". See [`title_from_citation`] for further
+#'   detail.
+#'
+#' @param limit an `integer` of length 1. The maximum number of records to test
+#'   to identify the match. Must be strictly positive and < 100,0000. Only used
+#'   with WOS Lite API.
+#'
+#' @return A `data.frame` with one row and the following 5 columns:
+#'   - `reference`: the original citation;
+#'   - `search_term`: the cleaned title extracted from the citation used as the
+#'     query terms in APIs;
+#'   - `best_title`: the title of the best reference returned by WOS/CrossRef;
+#'   - `best_doi`: the DOI corresponding to the best reference returned by 
+#'     WOS/CrossRef;
+#'   - `string_dist`: the string distance (Optimal string aligment, `osa`)
+#'     between the original title and the best match. 
+#'     See [`stringdist::stringdist`] for further information.
+#' 
+#' @export
+#' 
+#' @examples
+#' \dontrun{
+#' ref <- paste0("Quainoo, A.K., Wetten, A.C., Allainguillaume, J., 2008. The ",
+#'               "effectiveness of somatic embryogenesis in eliminating the ", 
+#'               "cocoa swollen shoot virus from infected co- coa trees. ", 
+#'               "J. Virol. Methods 149, 91e96.")
+#'               
+#' search_doi(ref)
+#' }
+
+search_doi <- function(x, limit = 1) {
   
   ## Check arguments ----
   

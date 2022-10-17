@@ -118,7 +118,7 @@ doi_regex <- function() {
 
 
 
-#' Regular expression of year mentioned in a reference citation
+#' Regular expression of year mentioned in a citation
 #' 
 #' '9999 ' | '9999.' | '(9999)' | '9999z ' | '9999z.' | '(9999z)'
 #' 

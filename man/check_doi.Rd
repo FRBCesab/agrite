@@ -7,7 +7,7 @@
 check_doi(doi)
 }
 \arguments{
-\item{doi}{a \code{character} of length 1.}
+\item{doi}{a \code{character} of length 1. A single DOI to check.}
 }
 \value{
 A \code{logical}. If the DOI has the good structure and exists on
