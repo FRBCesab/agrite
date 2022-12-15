@@ -8,6 +8,12 @@ reference:
     - search_doi
     - search_in_wos
     - search_in_cr
+- title: Retrieve metadata
+  contents:
+    - get_metadata
+- title: Retrieve full text
+  contents:
+    - get_pdf
 - title: Handle DOI
   contents:
     - check_doi
