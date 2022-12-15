@@ -1,16 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# agrite
+# Agri-TE
 
 <!-- badges: start -->
 
 [![R CMD
-Check](https://github.com/frbcesab/agrite/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ahasverus/agrite/actions/workflows/R-CMD-check.yaml)
+Check](https://github.com/frbcesab/agrite/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/frbcesab/agrite/actions/workflows/R-CMD-check.yaml)
 [![License: GPL (\>=
 2)](https://img.shields.io/badge/License-GPL%20%28%3E%3D%202%29-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 [![Website](https://github.com/frbcesab/agrite/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/frbcesab/agrite/actions/workflows/pkgdown.yaml)
-[![Dependencies](https://img.shields.io/badge/dependencies-9/66-orange?style=flat)](#)
+[![Dependencies](https://img.shields.io/badge/dependencies-11/66-red?style=flat)](#)
 <!-- badges: end -->
 
 Research Compendium of the
@@ -18,10 +18,11 @@ Research Compendium of the
 research group
 [Agri-TE](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/agri-te/).
 
-This repository contains different functions to retrieve the DOI of a
-reference citation using the [Web of Science Lite
-API](https://developer.clarivate.com/apis/woslite) (and the R package
-[`rwoslite`](https://github.com/frbcesab/rwoslite)) and the [CrossRef
+This repository contains different functions to retrieve the DOI,
+metadata and full text of a raw reference citation using the [Web of
+Science Lite API](https://developer.clarivate.com/apis/woslite) (and the
+R package [`rwoslite`](https://github.com/frbcesab/rwoslite)) and the
+[CrossRef
 API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/)
 (and the R package
 [`rcrossref`](https://cran.r-project.org/package=rcrossref)).
@@ -61,8 +62,8 @@ folder and open the `make.R`.
 
 Please cite this compendium as:
 
-> Casajus N. & Bellouin D. (2022) agrite: A toolbox to retrieve DOI of a
-> reference citation.
+> Casajus N. & Bellouin D. (2023) agrite: A Toolbox to Retrieve DOI,
+> Metadata, and Full Text from a Raw Citation.
 
 ### Notes
 

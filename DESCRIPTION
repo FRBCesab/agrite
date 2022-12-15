@@ -1,6 +1,6 @@
 Package: agrite
 Type: Package
-Title: Toolbox to Retrieve DOI from a Citation
+Title: Toolbox to Retrieve DOI, Metadata, and Full Text from a Raw Citation
 Version: 0.0.1
 Authors@R: c(
     person(given   = "Nicolas",
@@ -16,9 +16,11 @@ Authors@R: c(
 Description: Research Compendium of the 
     FRB-CESAB (<https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/>)
     research group Agri-TE (<https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/agri-te/>).
-    Contains different functions to retrieve the DOI of a reference citation using the 
-    Web of Science Lite API (<https://developer.clarivate.com/apis/woslite>) and the 
-    CrossRef API (<https://www.crossref.org/documentation/retrieve-metadata/rest-api/>).
+    Contains different functions to retrieve the DOI, metadata and full text of 
+    a raw reference citation using the Web of Science Lite API 
+    (<https://developer.clarivate.com/apis/woslite>), the CrossRef API 
+    (<https://www.crossref.org/documentation/retrieve-metadata/rest-api/>), and
+    Sc*-H*b website.
 URL: https://github.com/FRBCesab/agrite
 BugReports: https://github.com/FRBCesab/agrite/issues
 License: GPL (>= 2)
