@@ -3,6 +3,7 @@
 export(check_doi)
 export(clean_title)
 export(doi_to_bib)
+export(get_metadata)
 export(get_pdf)
 export(search_doi)
 export(search_in_cr)
