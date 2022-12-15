@@ -23,12 +23,16 @@ dir.create(path_pdf, showWarnings = FALSE, recursive = TRUE)
 
 for (i in 1:nrow(unique_refs)) {
 
-  ## Get DOI ----
+  ## Clean DOI ----
   
-  doi <- c(unique_refs[i, "DOI"], unique_refs[i, "best_doi"])
+  dois <- c(unique_refs[i, "DOI"], unique_refs[i, "best_doi"])
+  dois <- dois[!is.na(dois)]
+  dois <- gsub("https://doi.org/", "", dois)
   
   is_dois <- unlist(lapply(dois, is_valid_doi))
+  
   dois <- dois[which(is_dois)]
+  doi  <- unique(dois)
   
   
   ## Download PDF if possible ----
