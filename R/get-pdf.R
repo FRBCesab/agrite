@@ -114,13 +114,14 @@ get_pdf <- function(doi, download = TRUE, path = ".", filename = "",
       pdf_link <- paste0(base_url, pdf_link)
     }
 
-    ## Check captcha ----
+    
+    ## Check for Captcha ----
 
     pdf <- httr::GET(pdf_link)    
     pdf <- httr::content(pdf, as = "text")    
     captcha <- grep("captcha", pdf)
 
-    if (length(captcha) > 0) stop("Fucking captcha")
+    if (length(captcha) > 0) stop("Please solve captcha")
 
 
     ## Download PDF ----
