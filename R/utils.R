@@ -136,7 +136,7 @@ year_regex <- function() {
 #' @noRd
 
 doi_url <- function() {
-  "https://doi.org/"
+  "https://doi.org/api/handles/"
 }
 
 

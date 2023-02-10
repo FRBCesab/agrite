@@ -31,7 +31,7 @@ dir.create(here::here("outputs"), showWarnings = FALSE)
 
 ## Run Project ----
 
-source(here::here("analyses", "01-check_raw_data.R"))
-source(here::here("analyses", "02-extract_unique_refs.R"))
-source(here::here("analyses", "03-retrieve_dois.R"))
+# source(here::here("analyses", "01-check_raw_data.R"))
+# source(here::here("analyses", "02-extract_unique_refs.R"))
+# source(here::here("analyses", "03-retrieve_dois.R"))
 source(here::here("analyses", "04-retrieve_pdfs.R"))

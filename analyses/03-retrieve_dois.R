@@ -75,13 +75,15 @@ for (i in 1:nrow(unique_refs)) {
       
       n_char <- nchar(doi_match$"search_term")
       
-      if ((doi_match$"string_dist" / n_char) > 0.1) {
-        
-        doi_match$"search_term" <- NA
-        doi_match$"best_title"  <- NA
-        doi_match$"best_doi"    <- NA
-        doi_match$"string_dist" <- NA
-        doi_match$"source"      <- NA
+      if (!is.na(doi_match$"string_dist")) {
+        if ((doi_match$"string_dist" / n_char) > 0.1) {
+          
+          doi_match$"search_term" <- NA
+          doi_match$"best_title"  <- NA
+          doi_match$"best_doi"    <- NA
+          doi_match$"string_dist" <- NA
+          doi_match$"source"      <- NA
+        }
       }
     }
     

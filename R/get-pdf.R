@@ -79,6 +79,7 @@ get_pdf <- function(doi, download = TRUE, path = ".", filename = "",
     stop("You must store the Sci-Hub URL in the '~/.Renviron' file under the ",
          "key 'SCIHUB_URL'", call. = FALSE)
   }
+
   
   
   ## Get HTML page ----
@@ -112,12 +113,21 @@ get_pdf <- function(doi, download = TRUE, path = ".", filename = "",
       
       pdf_link <- paste0(base_url, pdf_link)
     }
-    
-    
+
+    ## Check captcha ----
+
+    pdf <- httr::GET(pdf_link)    
+    pdf <- httr::content(pdf, as = "text")    
+    captcha <- grep("captcha", pdf)
+
+    if (length(captcha) > 0) stop("Fucking captcha")
+
+
     ## Download PDF ----
     
     if (download) {
-        download.file(pdf_link, destfile = file_path)  
+        tryCatch(download.file(pdf_link, destfile = file_path), 
+                 error = function(e) NULL)
     }
     
     return(invisible(pdf_link))
