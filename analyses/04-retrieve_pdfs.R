@@ -23,7 +23,7 @@ path_pdf <- here::here("outputs", "pdfs")
 dir.create(path_pdf, showWarnings = FALSE, recursive = TRUE)
 
 
-for (i in 16532:nrow(unique_refs)) {
+for (i in 14588:nrow(unique_refs)) {
 
   ## Clean DOI ----
   

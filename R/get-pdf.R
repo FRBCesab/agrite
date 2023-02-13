@@ -84,7 +84,7 @@ get_pdf <- function(doi, download = TRUE, path = ".", filename = "",
   
   ## Get HTML page ----
   
-  page    <- httr::GET(paste(base_url, doi, sep = "/"))
+  page    <- httr::GET(paste(base_url, doi, sep = "/"), httr::user_agent("Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"))
   content <- httr::content(page, as = "text")
   
   if (length(grep("Unfortunately", content)) == 0) {
@@ -117,7 +117,7 @@ get_pdf <- function(doi, download = TRUE, path = ".", filename = "",
     
     ## Check for Captcha ----
 
-    pdf <- httr::GET(pdf_link)    
+    pdf <- httr::GET(pdf_link, httr::user_agent("Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"))    
     pdf <- httr::content(pdf, as = "text")    
     captcha <- grep("captcha", pdf)
 
