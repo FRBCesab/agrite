@@ -11,7 +11,7 @@
 ## Open unique references ----
 
 unique_refs <- readxl::read_xlsx(here::here("outputs", 
-                                            "unique_primary_studies_with_doi.xlsx"))
+                                            "unique_primary_studies_with_doi_bis.xlsx"))
 
 unique_refs <- as.data.frame(unique_refs)
 
@@ -23,11 +23,11 @@ path_pdf <- here::here("outputs", "pdfs")
 dir.create(path_pdf, showWarnings = FALSE, recursive = TRUE)
 
 
-for (i in 14588:nrow(unique_refs)) {
+for (i in 16413:nrow(unique_refs)) {
 
   ## Clean DOI ----
   
-  dois <- unlist(c(unique_refs[i, "DOI"], unique_refs[i, "best_doi"]))
+  dois <- unique_refs[i, "valid_doi"]
   dois <- dois[!is.na(dois)]
   dois <- gsub("https://doi.org/", "", dois)
   
