@@ -33,6 +33,7 @@ Imports:
     curl,
     here,
     httr,
+    pdftools,
     pkgload,
     rcrossref,
     readxl,

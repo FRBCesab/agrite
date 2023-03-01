@@ -1,12 +1,16 @@
 #' Agri-TE project
 #' 
 #' @description 
-#' A paragraph providing a full description of the project and describing each 
-#' step of the workflow.
+#' This project contains code for:
+#'   - Retrieve DOI from full citation
+#'   - Retrieve metadata from DOI
+#'   - Retrieve full text (PDF) from DOI
+#'   - Extract countries from reference title
+#'   - Extract countries in PDF
 #' 
 #' @author Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr}
 #' 
-#' @date 2022/10/13
+#' @date 2023/03/01
 
 
 
@@ -27,6 +31,7 @@ pkgload::load_all(here::here())
 
 dir.create(here::here("data", "derived-data"), showWarnings = FALSE)
 dir.create(here::here("outputs"), showWarnings = FALSE)
+dir.create(here::here("outputs", "pdf"), showWarnings = FALSE)
 
 
 ## Run Project ----
@@ -36,5 +41,5 @@ dir.create(here::here("outputs"), showWarnings = FALSE)
 # source(here::here("analyses", "03-retrieve_dois.R"))
 # source(here::here("analyses", "04-retrieve_pdfs.R"))
 # source(here::here("analyses", "03-retrieve_dois_bis.R"))
-# source(here::here("analyses", "05-extract_countries.R"))
-source(here::here("analyses", "06-extract_countries_pdf.R"))
+# source(here::here("analyses", "05-extract_countries_title.R"))
+# source(here::here("analyses", "06-extract_countries_pdf.R"))

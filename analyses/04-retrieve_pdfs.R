@@ -1,6 +1,8 @@
 #' Agri-TE project
 #' 
 #' Download PDF using the famous website Sc.-H.b.
+#' Note that sometimes, an error is raised. Just change the starting value of i
+#' in the loop.
 #' 
 #' @author Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr}
 #' 
@@ -23,7 +25,8 @@ path_pdf <- here::here("outputs", "pdfs")
 dir.create(path_pdf, showWarnings = FALSE, recursive = TRUE)
 
 
-for (i in 16413:nrow(unique_refs)) {
+for (i in 1:nrow(unique_refs)) { # change 1 for a higher value in case of fail
+                                 # if the fail occurs at 156, change 1 for 157.
 
   ## Clean DOI ----
   

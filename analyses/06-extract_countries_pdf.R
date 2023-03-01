@@ -1,3 +1,19 @@
+#' Agri-TE project
+#' 
+#' Detect countries names in PDF using the package `geoparser`.
+#' Note that a filter is required to remove some pages 
+#' (e.g. first and last pages)
+#' 
+#' @author Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr}
+#' 
+#' @date 2023/02/15
+
+
+## Params ----
+
+n_cores <- 7 # number of cores used to parallelize the detection.
+
+
 ## Import data ----
 
 papers  <- list.files(here::here("outputs", "pdfs"))
@@ -42,7 +58,7 @@ countries_df <- do.call(rbind.data.frame, countries_list[which(pos)])
 countries_df <- merge(countries_df, studies, by = "noid", all = FALSE)
 
 
-## Remove duplicates ----
+## Remove PS duplicates ----
 
 keys <- paste(countries_df$"geographic_entity", countries_df$"valid_doi", sep = "__")
 
@@ -50,7 +66,8 @@ pos <- which(duplicated(keys))
 countries_df <- countries_df[-pos, ]
 
 
-## Summary ----
+## Summary over PS ----
+# must be rerun if some pages are removed
 
 countries <- rev(sort(table(countries_df$"geographic_entity")))
 countries <- as.data.frame(countries)

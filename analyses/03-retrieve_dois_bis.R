@@ -1,24 +1,34 @@
-## Rerun DOI detect ----
+#' Agri-TE project
+#' 
+#' Retrieve DOIs from citation references (2nd attempt)
+#' 
+#' @author Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr}
+#' 
+#' @date 2023/02/23
 
-# load(here::here("outputs", "unique_primary_studies_metadata.RData"))
-# 
-# unique_refs <- readxl::read_xls(here::here("outputs", "New_PS_Biodiv.xls"))
-# unique_refs <- as.data.frame(unique_refs)
-# unique_refs <- unique_refs[ , -1]
+
+
+## Import previous results ----
+
+load(here::here("outputs", "unique_primary_studies_metadata.RData"))
+
+unique_refs <- readxl::read_xls(here::here("outputs", "New_PS_Biodiv.xls"))
+unique_refs <- as.data.frame(unique_refs)
+unique_refs <- unique_refs[ , -1]
 
 
 ## Convert to boolean ----
 
-# pos <- which(unique_refs$"is_original_doi_valid" == "FAUX")
-# unique_refs$"is_original_doi_valid"[pos] <- FALSE
-# 
-# pos <- which(unique_refs$"is_original_doi_valid" == "VRAI")
-# unique_refs$"is_original_doi_valid"[pos] <- TRUE
-# 
-# pos <- which(unique_refs$"valid_doi" != "")
-# unique_refs[pos, "is_original_doi_valid"] <- TRUE
-# 
-# unique_refs$"is_original_doi_valid" <- as.logical(unique_refs$"is_original_doi_valid")
+pos <- which(unique_refs$"is_original_doi_valid" == "FAUX")
+unique_refs$"is_original_doi_valid"[pos] <- FALSE
+
+pos <- which(unique_refs$"is_original_doi_valid" == "VRAI")
+unique_refs$"is_original_doi_valid"[pos] <- TRUE
+
+pos <- which(unique_refs$"valid_doi" != "")
+unique_refs[pos, "is_original_doi_valid"] <- TRUE
+
+unique_refs$"is_original_doi_valid" <- as.logical(unique_refs$"is_original_doi_valid")
 
 
 ## Check and/or get DOI ----
@@ -51,7 +61,7 @@ for (i in 1:nrow(unique_refs)) {
         
         if (!is.na(doi_match$"string_dist")) {
           
-          if ((doi_match$"string_dist" / n_char) > 0.1) {
+          if ((doi_match$"string_dist" / n_char) > 0.1) { # we play with this filter
             
             doi_match$"search_term" <- NA
             doi_match$"best_title"  <- NA

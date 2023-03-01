@@ -76,7 +76,7 @@ for (i in 1:nrow(unique_refs)) {
       n_char <- nchar(doi_match$"search_term")
       
       if (!is.na(doi_match$"string_dist")) {
-        if ((doi_match$"string_dist" / n_char) > 0.1) {
+        if ((doi_match$"string_dist" / n_char) > 0.1) { # we play with this filter
           
           doi_match$"search_term" <- NA
           doi_match$"best_title"  <- NA

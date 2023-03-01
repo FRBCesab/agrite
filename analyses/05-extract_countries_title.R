@@ -1,3 +1,18 @@
+#' Agri-TE project
+#' 
+#' Detect countries names in reference title using the package `geoparser`.
+#' 
+#' @author Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr}
+#' 
+#' @date 2023/02/15
+
+
+
+## Params ----
+
+n_cores <- 7 # number of cores used to parallelize the detection.
+
+
 ## Import data ----
 
 metadata <- get(load(here::here("outputs", 
@@ -38,7 +53,7 @@ countries_list <- parallel::mclapply(1:length(metadata), function(i) {
     data.frame()
   }
   
-}, mc.cores = 7)
+}, mc.cores = n_cores)
 
 
 ## Filter match ----
@@ -56,7 +71,7 @@ countries_df <- do.call(rbind.data.frame, countries_list[which(pos)])
 countries_df <- merge(countries_df, studies, by = "noid", all = FALSE)
 
 
-## Remove duplicates ----
+## Remove duplicates PS ----
 
 keys <- paste(countries_df$"geographic_entity", countries_df$"valid_doi", sep = "__")
 
@@ -64,7 +79,7 @@ pos <- which(duplicated(keys))
 countries_df <- countries_df[-pos, ]
 
 
-## Summary ----
+## Summary over all PS ----
 
 countries <- rev(sort(table(countries_df$"geographic_entity")))
 countries <- as.data.frame(countries)
