@@ -32,6 +32,7 @@ pkgload::load_all(here::here())
 dir.create(here::here("data", "derived-data"), showWarnings = FALSE)
 dir.create(here::here("outputs"), showWarnings = FALSE)
 dir.create(here::here("outputs", "pdf"), showWarnings = FALSE)
+dir.create(here::here("figures"), showWarnings = FALSE)
 
 
 ## Run Project ----
@@ -43,3 +44,6 @@ dir.create(here::here("outputs", "pdf"), showWarnings = FALSE)
 # source(here::here("analyses", "03-retrieve_dois_bis.R"))
 # source(here::here("analyses", "05-extract_countries_title.R"))
 # source(here::here("analyses", "06-extract_countries_pdf.R"))
+source(here::here("analyses", "07-map_number_of_studies_title.R"))
+source(here::here("analyses", "07-map_number_of_studies_pdf.R"))
+

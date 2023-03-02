@@ -21,3 +21,4 @@ README.html
 inst/doc
 countryparser.R
 outputs/*
+data/raw-data/ipbes_*

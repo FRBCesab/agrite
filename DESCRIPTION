@@ -31,6 +31,7 @@ Depends:
     geoparser
 Imports: 
     curl,
+    graticule,
     here,
     httr,
     pdftools,
@@ -40,6 +41,8 @@ Imports:
     remotes,
     rvest,
     rwoslite,
+    sf,
+    sp,
     stringdist,
     writexl
 Remotes: 
